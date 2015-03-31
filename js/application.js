@@ -8,16 +8,27 @@ var secondsLeft = 10;
 var timer;
 var streak = 0;
 var num1, num2, maxNum;
+var operations = "";
+
+var opSelect = function() {
+  operations = "";
+  var op = $('.checkbox:checked');
+  for (i=0; i<op.length; i++) {
+    operations += $(op[i]).val();
+  } 
+  console.log(operations);
+  return operations;
+}
 
 var play = function(maxNum) {
   num1 = Math.ceil(Math.random()*maxNum);
   num2 = Math.ceil(Math.random()*maxNum);
-  // addition(num1,num2);
+  addition(num1,num2);
   // minize(num1,num2);
   // multiply(num1,num2);
   // divide(num1,num2);
   // square(num1);
-  root(num1);
+  // root(num1);
   $('#question-box').html(questionToPrint); 
 };
 
